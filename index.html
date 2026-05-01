@@ -1269,26 +1269,6 @@
       }, "*");
     }
 
-    function sendHeightSoon() {
-      sendHeight();
-      setTimeout(sendHeight, 100);
-      setTimeout(sendHeight, 300);
-      setTimeout(sendHeight, 700);
-      setTimeout(sendHeight, 1200);
-    }
-
-    window.addEventListener("load", sendHeightSoon);
-    window.addEventListener("resize", sendHeightSoon);
-
-    const observer = new ResizeObserver(sendHeightSoon);
-    observer.observe(document.body);
-
-    new MutationObserver(sendHeightSoon).observe(document.body, {
-      childList: true,
-      subtree: true,
-      attributes: true
-    });
-
   </script>
 
 </body>
